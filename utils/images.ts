@@ -1,3 +1,8 @@
-// import wel from "@/assets/images/welcome.png"
+import wel from "@/assets/images/welcome.png";
+import logo from "@/assets/images/logo.png"
 
-// export const welcome  = wel;
+export const image  = {
+    wel,
+    logo
+};
+  
