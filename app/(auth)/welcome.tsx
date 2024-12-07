@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React, { FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Button from '@/components/Button';
+import Button from '@/app/components/Button';
 import { router } from "expo-router"
 import { image } from '@/utils/images';
 
