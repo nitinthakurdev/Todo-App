@@ -18,21 +18,22 @@ const TabLayout = () => {
     tabBarActiveTintColor:"white",
     tabBarInactiveTintColor:"white",
     tabBarShowLabel:false,
+    tabBarHideOnKeyboard:true,
     tabBarStyle: {
       backgroundColor: "#333333",
       borderRadius: 50,
       paddingBottom: 25,
       marginHorizontal: 20,
-      marginBottom: 20,
+      marginBottom: 10,
       height: 70,
       display: "flex",
       flexDirection: "row",
       justifyContent: "center",
       alignItems: "center", 
-      position: "fixed",
       overflow: "hidden",
-      bottom:0,
+      position:"absolute",
     },
+   
    }}
    >
     <Tabs.Screen name='Home' options={{title:"Home",headerShown:false,tabBarIcon:({focused})=>(

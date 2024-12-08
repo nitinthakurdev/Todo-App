@@ -16,5 +16,5 @@ export interface IInputProp {
     onblur?:(e:NativeSyntheticEvent<TextInputFocusEventData>)=>void;
     value:string;
     error?:String;
-    numberOfLines?:number
+    multiline?:boolean
 }
