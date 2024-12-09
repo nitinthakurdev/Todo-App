@@ -18,3 +18,9 @@ export interface IInputProp {
     error?:String;
     multiline?:boolean
 }
+
+export interface ITasks {
+    title:string,
+    description:string,
+    status:string
+}
