@@ -24,6 +24,7 @@
     "expo-constants": "~17.0.3",
     "expo-font": "~13.0.1",
     "expo-haptics": "~14.0.0",
+    "expo-linear-gradient": "^14.0.1",
     "expo-linking": "~7.0.3",
     "expo-router": "~4.0.11",
     "expo-splash-screen": "~0.29.13",
@@ -46,7 +47,9 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "tailwindcss": "^3.4.16",
-    "yup": "^1.5.0"
+    "yup": "^1.5.0",
+    "expo-updates": "~0.26.10",
+    "expo-dev-client": "~5.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
