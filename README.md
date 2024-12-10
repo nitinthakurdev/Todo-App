@@ -48,3 +48,16 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## create build apk in expo 
+### create expo account if dont have an account
+1. go to the https://docs.expo.dev/build/setup/ and follow steps
+2. install this pagea global one time npm install -g eas-cli
+3. login our expo account using this command eas login
+4. configure the project using eas build:configure command 
+5. hit the last commant to convet apk  eas build -p android --profile preview 
+
+## Download my App only for android click link below
+  
+
+https://expo.dev/accounts/nitinthakurdev/projects/Todo/builds/a8926787-4f24-4e7d-bb4e-79290f5fd22c  
