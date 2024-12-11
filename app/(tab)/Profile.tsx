@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image, TouchableWithoutFeedback, Modal } from 'react-native';
+import { View, Text, ScrollView, Image, Modal, TouchableHighlight, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { icons, image } from '@/utils/images';
 
@@ -11,8 +11,10 @@ const Profile = () => {
         <View className='h-28 w-28 rounded-full border-2  border-transparent bg-white shadow-md shadow-slate-900 items-center justify-center relative' >
           <Image source={image.wel} className='h-24 w-24' resizeMode='contain' />
 
-          <View className='absolute bottom-3 -right-3 h-9 w-9 z-10 bg-gray-200 rounded-full border justify-center items-center'>
-            <Image source={icons.camara} className='h-7 w-7' />
+          <View className='absolute bottom-3 -right-3 h-9 w-9 z-10 bg-white border-transparent shadow-lg  rounded-full border justify-center items-center'>
+            <TouchableOpacity onPress={()=>setModalVisible(true)} >
+              <Image source={icons.camara} className='h-7 w-7' />
+            </TouchableOpacity>
 
           </View>
         </View>
@@ -26,9 +28,12 @@ const Profile = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => setModalVisible(!modalVisible)}
+
       >
-        <View></View>
-        <Text>Hello</Text>
+        <View className='flex-1  items-center justify-center '>
+          <View className='bg-slate-100 rounded-xl p-5 w-[90%] flex-row' ></View>
+        </View>
+        
       </Modal>
     </ScrollView>
   );

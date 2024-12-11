@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native';
 import React, { FC } from 'react';
 import { Stack } from 'expo-router';
 
