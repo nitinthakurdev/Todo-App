@@ -4,7 +4,8 @@ import { Stack } from 'expo-router';
 const StackLayout:FC = () => {
   return (
    <Stack>
-    <Stack.Screen name='newPassword' />
+    <Stack.Screen name='newPassword' options={{headerShown:false}} />
+    <Stack.Screen name='profiledetail' options={{headerShown:false}} />
    </Stack>
   );
 };

@@ -9,6 +9,8 @@ import red from '@/assets/images/4.jpg';
 import green from '@/assets/images/3.jpg';
 import yellow from '@/assets/images/2.jpg';
 import camara  from "@/assets/icon/camera.png";
+import file from "@/assets/icon/file.png";
+import bin from "@/assets/icon/bin.png";
 
 export const image = {
   wel,
@@ -24,5 +26,7 @@ export const icons = {
   profile,
   Add,
   list,
-  camara
+  camara,
+  file,
+  bin
 };

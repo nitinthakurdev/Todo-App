@@ -1,7 +1,7 @@
 {
   "name": "todo",
   "main": "expo-router/entry",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {
