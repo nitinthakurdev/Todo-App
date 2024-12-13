@@ -16,7 +16,10 @@
         "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.nitinthakurdev.Todo"
+      "package": "com.nitinthakurdev.Todo",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -44,7 +47,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "dbcac557-eaf0-4ea8-bfe6-1dcdb9adb9db"
+        "projectId": "fba06d9b-1bc2-4685-838f-8ea2b8d91e4f"
       }
     },
     "runtimeVersion": {

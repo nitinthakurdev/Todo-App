@@ -52,10 +52,26 @@ Join our community of developers creating universal apps.
 ## create build apk in expo 
 ### create expo account if dont have an account
 1. go to the https://docs.expo.dev/build/setup/ and follow steps
-2. install this pagea global one time npm install -g eas-cli
+2. install this pagea global one time
+
+   ```bash
+   npm install -g eas-cli
+   ```
+
 3. login our expo account using this command eas login
-4. configure the project using eas build:configure command 
-5. hit the last commant to convet apk  eas build -p android --profile preview 
+
+4. configure the project
+
+   ```bash
+   eas build:configure command 
+   ```
+   
+5. hit the last commant to convet apk
+
+   ```bash
+   eas build -p android --profile preview
+   ```
+    
 
 ## Download my App only for android click link below
   
