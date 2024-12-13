@@ -2,7 +2,7 @@ import { View, Text, BackHandler } from 'react-native';
 import React, { FC, ReactElement, useEffect } from 'react';
 import { router } from 'expo-router';
 
-const profiledetail:FC = ():ReactElement => {
+const help:FC = ():ReactElement => {
    useEffect(() => {
       const backhandler = BackHandler.addEventListener('hardwareBackPress', () => {
         router.replace("/Profile")
@@ -12,9 +12,9 @@ const profiledetail:FC = ():ReactElement => {
     }, []);
   return (
     <View>
-      <Text>profiledetail</Text>
+      <Text>help</Text>
     </View>
   );
 };
 
-export default profiledetail;
+export default help;

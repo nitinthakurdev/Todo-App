@@ -6,7 +6,7 @@ import BottomSheet, {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import { ITasks } from '@/types/Types';
-import Button from '../components/Button';
+import Button from '../../components/Button';
 
 const Tasks = () => {
   const tasks: ITasks[] = [

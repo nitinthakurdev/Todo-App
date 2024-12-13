@@ -2,19 +2,19 @@ import { View, Text, BackHandler } from 'react-native';
 import React, { FC, ReactElement, useEffect } from 'react';
 import { router } from 'expo-router';
 
-const profiledetail:FC = ():ReactElement => {
+const privacy:FC = ():ReactElement => {
    useEffect(() => {
       const backhandler = BackHandler.addEventListener('hardwareBackPress', () => {
         router.replace("/Profile")
         return true
-      })
+      });
       return ()=>backhandler.remove()
     }, []);
   return (
     <View>
-      <Text>profiledetail</Text>
+      <Text>privacy</Text>
     </View>
   );
 };
 
-export default profiledetail;
+export default privacy;

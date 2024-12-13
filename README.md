@@ -63,7 +63,7 @@ Join our community of developers creating universal apps.
 4. configure the project
 
    ```bash
-   eas build:configure command 
+   eas build:configure 
    ```
    
 5. hit the last commant to convet apk

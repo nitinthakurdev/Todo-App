@@ -12,7 +12,7 @@ const Welcome = () => {
   }, []);
 
   return loader ? (
-    <Redirect href={'/(tab)/Home'} />
+    <Redirect href={'/(stack)/(tab)/Home'} />
   ) : (
     <View className="flex-1 items-center justify-center">
       <ActivityIndicator size="large" />

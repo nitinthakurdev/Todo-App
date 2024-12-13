@@ -11,6 +11,10 @@ import yellow from '@/assets/images/2.jpg';
 import camara  from "@/assets/icon/camera.png";
 import file from "@/assets/icon/file.png";
 import bin from "@/assets/icon/bin.png";
+import password from "@/assets/icon/password.png";
+import privacy from "@/assets/icon/privacy.png";
+import help from "@/assets/icon/help.png";
+import logout from "@/assets/icon/logout.png";
 
 export const image = {
   wel,
@@ -28,5 +32,9 @@ export const icons = {
   list,
   camara,
   file,
-  bin
+  bin,
+  password,
+  privacy,
+  help,
+  logout
 };

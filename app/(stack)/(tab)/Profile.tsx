@@ -23,7 +23,7 @@ const ImageSelector: FC<Imageselector> = ({ image, text, onPress }): ReactElemen
 
 const ProfileButtons: FC<Imageselector> = ({image,text,onPress}): ReactElement => {
   return (
-    <TouchableHighlight onPress={onPress} className='w-full bg-gray-100 rounded-lg py-3 px-2 ' >
+    <TouchableHighlight onPress={onPress} className='w-full bg-gray-100 rounded-lg py-3 px-2 my-2 ' >
       <View className='flex-row gap-3 items-center '>
         <Image source={image} className='h-7 w-7' resizeMode='contain' tintColor={"gray"} />
         <Text className='text-lg '>{text}</Text>
@@ -75,6 +75,10 @@ const Profile: FC = (): ReactElement => {
       <View className='py-5' >
         <Text className='text-xl font-medium pb-2'>Personal Information</Text>
         <ProfileButtons image={icons.profile} text='Profile Detail' onPress={()=>router.replace("/(stack)/profiledetail")} />
+        <ProfileButtons image={icons.password} text='Change Password' onPress={()=>router.replace("/(stack)/newPassword")} />
+        <ProfileButtons image={icons.privacy} text='Privacy Policy' onPress={()=>router.replace("/(stack)/privacy")} />
+        <ProfileButtons image={icons.help} text='Help' onPress={()=>router.replace("/(stack)/help")} />
+        <ProfileButtons image={icons.logout} text='Logout'  />
       </View>
 
 
