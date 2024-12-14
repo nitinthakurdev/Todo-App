@@ -15,6 +15,7 @@ import password from "@/assets/icon/password.png";
 import privacy from "@/assets/icon/privacy.png";
 import help from "@/assets/icon/help.png";
 import logout from "@/assets/icon/logout.png";
+import back from "@/assets/icon/back.png";
 
 export const image = {
   wel,
@@ -36,5 +37,6 @@ export const icons = {
   password,
   privacy,
   help,
-  logout
+  logout,
+  back
 };
