@@ -72,7 +72,7 @@ const signin: FC = (): ReactElement => {
                   </Text>
                 </View>
                 <Button
-                  style="bg-button flex items-center justify-center py-2 mt-3 rounded-xl"
+                  style="bg-button flex items-center justify-center py-4 mt-3 rounded-xl"
                   text="Sign In"
                   textStyle="text-white text-center font-medium text-xl"
                   onPress={handleSubmit}

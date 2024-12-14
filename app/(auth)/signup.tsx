@@ -9,10 +9,9 @@ import { router } from 'expo-router';
 
 const signup: FC = (): ReactElement => {
   const validationSchema = Yup.object({
-    username: Yup.string().required('Username or email is required'),
-    email: Yup.string()
-      .email('invalid Email')
-      .required('Username or email is required'),
+    name: Yup.string().min(2).max(32).required('Full Name is required'),
+    username: Yup.string().required('Username is required'),
+    email: Yup.string().email('invalid Email').required('Email is required'),
     password: Yup.string()
       .min(6, 'Password must be at least 6 characters')
       .required('Password is required'),
@@ -32,7 +31,7 @@ const signup: FC = (): ReactElement => {
             Create Your Account
           </Text>
           <Formik
-            initialValues={{ username: '', email: '', password: '' }}
+            initialValues={{ name: '', username: '', email: '', password: '' }}
             validationSchema={validationSchema}
             onSubmit={(value) => {
               console.log(value);
@@ -47,6 +46,13 @@ const signup: FC = (): ReactElement => {
               touched,
             }) => (
               <View className="px-5 py-3">
+                <InputField
+                  label="Full Name "
+                  value={values.username}
+                  onChange={handleChange('name')}
+                  onblur={handleBlur('name')}
+                  error={touched.name && errors.name ? errors.name : ''}
+                />
                 <InputField
                   label="Username "
                   value={values.username}
@@ -74,7 +80,7 @@ const signup: FC = (): ReactElement => {
                   }
                 />
                 <Button
-                  style="bg-button flex items-center justify-center py-2 mt-3 rounded-xl"
+                  style="bg-button flex items-center justify-center py-4 mt-3 rounded-xl"
                   text="Sign Up"
                   textStyle="text-white text-center font-medium text-xl"
                   onPress={handleSubmit}

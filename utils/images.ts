@@ -8,14 +8,14 @@ import all from '@/assets/images/1.jpg';
 import red from '@/assets/images/4.jpg';
 import green from '@/assets/images/3.jpg';
 import yellow from '@/assets/images/2.jpg';
-import camara  from "@/assets/icon/camera.png";
-import file from "@/assets/icon/file.png";
-import bin from "@/assets/icon/bin.png";
-import password from "@/assets/icon/password.png";
-import privacy from "@/assets/icon/privacy.png";
-import help from "@/assets/icon/help.png";
-import logout from "@/assets/icon/logout.png";
-import back from "@/assets/icon/back.png";
+import camara from '@/assets/icon/camera.png';
+import file from '@/assets/icon/file.png';
+import bin from '@/assets/icon/bin.png';
+import password from '@/assets/icon/password.png';
+import privacy from '@/assets/icon/privacy.png';
+import help from '@/assets/icon/help.png';
+import logout from '@/assets/icon/logout.png';
+import back from '@/assets/icon/back.png';
 
 export const image = {
   wel,
@@ -38,5 +38,5 @@ export const icons = {
   privacy,
   help,
   logout,
-  back
+  back,
 };

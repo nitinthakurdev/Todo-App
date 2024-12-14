@@ -34,7 +34,7 @@ const InputField: FC<IInputProp> = ({
           <TextInput
             placeholder={label}
             style={{ textAlignVertical: 'top' }}
-            className={` rounded-xl  p-4 font-semibold border-2  text-[15px] ${inputStyle} `}
+            className={` rounded-xl  p-4 font-semibold bg-gray-200  text-[15px] ${inputStyle} `}
             secureTextEntry={secure}
             value={value}
             onChangeText={onChange}
