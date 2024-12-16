@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, FlatList, TouchableWithoutFeedback, ActivityIndicator } from 'react-native';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, {
@@ -7,23 +7,20 @@ import BottomSheet, {
 } from '@gorhom/bottom-sheet';
 import { ITasks } from '@/types/Types';
 import Button from '../../components/Button';
+import { useAuthContext } from '@/context';
 
 const Tasks = () => {
-  const tasks: ITasks[] = [
-    {
-      title: 'car wash',
-      description: 'this is my car and i want to wash ',
-      status: 'pending',
-    },
-    {
-      title: 'car wash again',
-      description: 'this is my car and i want to wash ',
-      status: 'complete',
-    },
-  ];
-
+  const {todoData,getTodo,loading} = useAuthContext()
   const snapPoint = useMemo(() => ['50%', '75%'], []);
   const bottomSheetref = useRef<BottomSheet>(null);
+  const description = "this is my car and i want to wash "
+  const [page,setpage] = useState(1)
+  const HandleData = () => {
+    const newpage = page + 1
+    console.log(page)
+    setpage(newpage)
+    getTodo(page)
+  }
   const renderBackgrop = useCallback(
     (prop: any) => (
       <BottomSheetBackdrop
@@ -34,14 +31,17 @@ const Tasks = () => {
     ),
     [],
   );
-  const [currentData, setCurrentData] = useState<ITasks | null>(null);
+  const [currentData, setCurrentData] = useState<any>(null);
 
   return (
     <GestureHandlerRootView className="flex-1">
       <FlatList
         className="bg-white pb-10"
-        data={tasks}
+        data={todoData}
         renderItem={({ item }) => (
+          <View>
+
+          
           <TouchableWithoutFeedback
             onPress={() => {
               bottomSheetref.current?.collapse();
@@ -49,28 +49,30 @@ const Tasks = () => {
             }}
           >
             <View className="shadow-lg px-5 relative shadow-black mx-5 border border-transparent bg-white  py-3  rounded-lg my-4 ">
-              <Text className="text-lg font-medium">{item.title}</Text>
+              <Text className="text-lg font-medium">{item.title.slice(0, 25)}....</Text>
               <Text className="text-slate-600">
-                {item.description.slice(0, 20)}...
+                {description.slice(0, 20)}...
               </Text>
               <Text
-                className={`absolute right-5 top-[50%] -translate-y-[20%] px-4 py-2 ${item.status === 'pending' ? 'bg-yellow-300' : 'bg-green-500 text-white'} rounded-full`}
+                className={`absolute right-5 top-[50%] -translate-y-[20%] px-4 py-2 ${item.completed  ?  'bg-green-500 text-white' : 'bg-yellow-300' } rounded-full`}
               >
-                {item.status}
+                {item.completed ? "Completed" : "Pending"}
               </Text>
             </View>
           </TouchableWithoutFeedback>
+          </View>
         )}
         keyExtractor={(item, index) => index.toString()}
         ListHeaderComponent={() => (
           <Text className="text-3xl text-center py-10 font-bold">Tasks</Text>
         )}
+        onEndReached={HandleData}
         ListEmptyComponent={() => (
           <Text className="text-center text-xl  py-10 text-gray-500">
             No tasks available
           </Text>
         )}
-        ListFooterComponent={() => <View className="my-20"></View>}
+        ListFooterComponent={() => <View className="h-48">{loading && <ActivityIndicator size="large"/>}</View>}
       />
 
       <BottomSheet
@@ -103,11 +105,11 @@ const Tasks = () => {
               </Text>
               <Text>
                 <Text className="text-xl">Message : </Text>
-                <Text className="capitalize">{currentData?.description}</Text>
+                <Text className="capitalize">{description}</Text>
               </Text>
               <Text>
                 <Text className="text-xl">Status : </Text>
-                <Text className="capitalize">{currentData?.status}</Text>
+                <Text className="capitalize">{currentData?.completed ? "Completed" : 'Pending'}</Text>
               </Text>
             </View>
             <View>
@@ -118,7 +120,7 @@ const Tasks = () => {
                   textStyle="text-white text-lg font-medium"
                   style="bg-button px-3 py-2 rounded-xl"
                 />
-                {currentData?.status === 'pending' && (
+                {!currentData?.completed && (
                   <Button
                     text="Cancel"
                     textStyle="text-white text-lg font-medium"
@@ -130,7 +132,7 @@ const Tasks = () => {
                   textStyle="text-white text-lg font-medium"
                   style="bg-red-600 px-3 py-2 rounded-xl"
                 />
-                {currentData?.status === 'pending' && (
+                {!currentData?.completed && (
                   <Button
                     text="Complete"
                     textStyle="text-white text-lg font-medium"

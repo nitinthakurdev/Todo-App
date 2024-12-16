@@ -13,6 +13,7 @@ import React, { FC, ReactElement, useState } from 'react';
 import { icons, image } from '@/utils/images';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
+import { useAuthContext } from '@/context';
 
 interface Imageselector {
   image: ImageSourcePropType;
@@ -25,6 +26,9 @@ const ImageSelector: FC<Imageselector> = ({
   text,
   onPress,
 }): ReactElement => {
+
+  
+
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -67,6 +71,7 @@ const ProfileButtons: FC<Imageselector> = ({
 const Profile: FC = (): ReactElement => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [img, setImg] = useState<string | null>(null);
+  const {logout} = useAuthContext()
   const uploadImage = async (mode?: string) => {
     try {
       let result;
@@ -141,7 +146,7 @@ const Profile: FC = (): ReactElement => {
           text="Help"
           onPress={() => router.replace('/(stack)/help')}
         />
-        <ProfileButtons image={icons.logout} text="Logout" />
+        <ProfileButtons onPress={logout} image={icons.logout} text="Logout" />
       </View>
 
       {/* modal */}

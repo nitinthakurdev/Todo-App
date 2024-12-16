@@ -6,12 +6,14 @@ import Button from '@/app/components/Button';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { router } from 'expo-router';
+import { useAuthContext } from '@/context';
 
 const signin: FC = (): ReactElement => {
+  const {loginUser} = useAuthContext()
   const validationSchema = Yup.object({
     username: Yup.string().required('Username or email is required'),
     password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
+      .min(4, 'Password must be at least 6 characters')
       .required('Password is required'),
   });
   return (
@@ -32,7 +34,7 @@ const signin: FC = (): ReactElement => {
             initialValues={{ username: '', password: '' }}
             validationSchema={validationSchema}
             onSubmit={(value) => {
-              console.log(value);
+              loginUser();
             }}
           >
             {({

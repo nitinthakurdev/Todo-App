@@ -24,3 +24,13 @@ export interface ITasks {
   description: string;
   status: string;
 }
+
+
+export interface IAuthContextProp {
+  token:string | null;
+  loading:boolean;
+  loginUser:()=>void;
+  logout:()=>void;
+  todoData:any;
+  getTodo:(value:number)=>Promise<void>;
+}
